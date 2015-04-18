@@ -1,7 +1,7 @@
 <?php
 define("DB_SERVER", "localhost");
-define("DB_USER", ""); // your username
-define("DB_PASS", ""); // your password
+define("DB_USER", "blogger"); // your username
+define("DB_PASS", "blogger"); // your password
 define("DB_NAME", "blog");	// database name
 //creates database connection
  
