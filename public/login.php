@@ -4,7 +4,7 @@
 <?php 
 $login = logged_in();
 if($login) {
-	redirect_to("blog.php?user=". $_SESSION["user_id"]);
+	redirect_to(PROJECT."blog?user=". $_SESSION["user_id"]);
 }
 
 if(isset($_POST['submit'])) {
@@ -14,7 +14,7 @@ if(isset($_POST['submit'])) {
 	
 	if(!empty($errors)) {
 		$_SESSION["errors"] = $errors;
-		redirect_to("login.php");
+		redirect_to(PROJECT."login");
 	}
 	$username= $_POST["username"];
 	$password= $_POST["password"];
