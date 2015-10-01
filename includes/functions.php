@@ -1,5 +1,9 @@
 <?php
 
+$project_path = dirname(dirname(__FILE__));
+$name = array_pop(explode("/", $project_path));
+define("PROJECT", "/{$name}/");
+
 function redirect_to($new_location) {
 	header("Location: " . $new_location);
 	exit;

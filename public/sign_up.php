@@ -28,7 +28,7 @@ if(isset($_POST['submit'])) {
 	
 	if(!empty($errors)) {
 	$_SESSION["errors"] = $errors;
-	redirect_to("sign_up.php");
+	redirect_to(PROJECT."signup");
 	}
 	
 	$query  = "INSERT INTO users (";
@@ -39,10 +39,10 @@ if(isset($_POST['submit'])) {
 	$result = mysqli_query($connection, $query); 	
 	
 	if($result && mysqli_affected_rows($connection) >= 1) {
-	$_SESSION["message"] = "You have been registered successfully!";
-	redirect_to("home.php");
+		$_SESSION["message"] = "You have been registered successfully!";
+		redirect_to(PROJECT."home");
 	} else {
-	$_SESSION["message"] = "Something went wrong, Please try again";
+		$_SESSION["message"] = "Something went wrong, Please try again";
 	}
 }
 
@@ -54,7 +54,7 @@ if(isset($_POST['submit'])) {
 		echo form_errors($errors);
 	?>
 		<h2>New Member</h2>
-		<form action="sign_up.php" method="post">
+		<form action="" method="post">
 			<p>First Name:
 				<input type="text" name="first_name" value="" />
 			</p>
@@ -81,7 +81,7 @@ if(isset($_POST['submit'])) {
 			</p>
 			<input type="submit" name="submit" value="Sign Up" />
 		</form>
-	 <a href="home.php">Cancel</a>
+	 <a href="<?php echo PROJECT; ?>home">Cancel</a>
 	</div>
 </div>
 

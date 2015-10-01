@@ -25,11 +25,11 @@ if(isset($_POST['submit'])) {
 		//Mark user as logged in
 		$_SESSION["user_id"] = $found_user["id"];
 		$_SESSION["username"] = $found_user["username"];
-		redirect_to("blog.php?user=". $found_user["id"]);
+		redirect_to(PROJECT."blog?user=". $found_user["id"]);
 	} else {
 		//failure
 		$_SESSION["message"] = "Username/password not found";
-		redirect_to("login.php");
+		redirect_to(PROJECT."login");
 	}
 }
 
@@ -44,7 +44,7 @@ if(isset($_POST['submit'])) {
 	<?php $errors = errors();
 		echo form_errors($errors);	?>
 		<h2>Login</h2>
-		<form action="login.php" method="post">
+		<form action="" method="post">
 			<p>Username:
 				<input type="text" name="username" value="" /><br>
 			</p>

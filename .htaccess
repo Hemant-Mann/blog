@@ -1,0 +1,11 @@
+# My custom routes for blog
+<IfModule mod_rewrite.c>
+	Options -Indexes
+	RewriteEngine On
+	RewriteRule ^/?$ public/home.php [NC,L]
+	RewriteRule ^home/?$ public/home.php [NC,L]
+	RewriteRule ^blog/?$ public/blog.php [NC,L]
+	RewriteRule ^login/?$ public/login.php [NC,L]
+	RewriteRule ^signup/?$ public/sign_up.php [NC,L]
+	RewriteRule ^logout/?$ public/logout.php [NC,L]
+</IfModule> 

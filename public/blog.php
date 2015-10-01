@@ -14,7 +14,7 @@ require_once("../includes/db_connection.php"); ?>
 	
 	if(!empty($errors)) {
 	$_SESSION["errors"] = $errors;
-	redirect_to("blog.php?user=". urlencode($current_user_id));
+	redirect_to(PROJECT."blog?user=". urlencode($current_user_id));
 	}
 	
 	$query  = "INSERT INTO posts (";
@@ -26,7 +26,7 @@ require_once("../includes/db_connection.php"); ?>
 	
 	if($result) {
 		$_SESSION["message"] = "Entry Posted";
-		redirect_to("blog.php?user=". urlencode($current_user_id));
+		redirect_to(PROJECT."blog?user=". urlencode($current_user_id));
 	} else {
 		$_SESSION["message"] = "Failed to post your entry!";
 	}
@@ -41,7 +41,7 @@ require_once("../includes/db_connection.php"); ?>
 		echo form_errors($errors);
 		echo message(); ?>
 		<h2>Welcome: <?php echo htmlentities($_SESSION["username"]); ?></h2>
-		<form action="blog.php?user=<?php echo $current_user_id; ?>" method="post">
+		<form action="<?php echo PROJECT; ?>blog?user=<?php echo $current_user_id; ?>" method="post">
 			Content:<br><br>
 			<textarea name="content" rows="20" cols="150"></textarea><br><br>
 			<input type="submit" name="submit" value="Post" />
@@ -62,7 +62,7 @@ require_once("../includes/db_connection.php"); ?>
 			</div>
 			<?php } ?>
 		   </div>
-		<a href = "logout.php">Logout</a>
+		<a href = "<?php echo PROJECT; ?>logout">Logout</a>
 	</div>
 </div>
 <?php include("../includes/layouts/footer.php"); ?>

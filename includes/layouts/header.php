@@ -1,8 +1,7 @@
-
 <html>
 <head>
 	<title>BLOG</title>
-	<link href="stylesheets/public.css" media="all" rel="stylesheet" type="text/css" />
+	<link href="<?php echo PROJECT; ?>public/stylesheets/public.css" media="all" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id = "header">

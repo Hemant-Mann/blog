@@ -10,10 +10,10 @@ require_once("../includes/db_connection.php"); ?>
 	<br><h2>Welcome to the SwiftIntern Blog!</h2><br>	
 	
 	New Member:
-	<a href="sign_up.php">Sign Up</a><br><br>
+	<a href="<?php echo PROJECT; ?>signup">Sign Up</a><br><br>
 	
 	Already a Member:
-	<a href="login.php">Login</a>
+	<a href="<?php echo PROJECT; ?>login">Login</a>
    </div>
 </div>
 

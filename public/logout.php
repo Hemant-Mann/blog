@@ -6,7 +6,7 @@
 //session start
 $_SESSION["user_id"] = null;
 $_SESSION["username"] = null;
-redirect_to("login.php");
+redirect_to(PROJECT."login");
 ?>
 <?php
 
